@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Detalles que emocionan | Tarjetas personalizadas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#inicio" class="logo">
+        <span class="logo-icon">❤</span>
+
+        <span class="logo-text">
+          <strong>Detalles</strong>
+          <small>que emocionan</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#disenos">Diseños</a>
+        <a href="#crear-tarjeta">Crear gratis</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button class="btn btn-primary btn-header" onclick="abrirWhatsApp()">
+        WhatsApp
+      </button>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <div class="badge">✨ Tarjetas digitales personalizadas</div>
+
+          <h1>Detalles que emocionan</h1>
+
+          <p>
+            Crea tarjetas digitales gratis en segundos o solicita un diseño personalizado
+            para bautizos, misas, revelación de género, baby shower, cumpleaños,
+            quinceañeros, matrimonios y graduaciones.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#crear-tarjeta">
+              Crear tarjeta gratis
+            </a>
+
+            <button
+              class="btn btn-outline"
+              onclick="abrirWhatsApp('Hola, deseo hacer un pedido de una tarjeta personalizada.')"
+            >
+              Pedir diseño personalizado
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>Gratis</strong>
+              <span>Creador automático</span>
+            </div>
+
+            <div class="stat-card">
+              <strong>S/ 35</strong>
+              <span>Diseños personalizados</span>
+            </div>
+
+            <div class="stat-card">
+              <strong>WhatsApp</strong>
+              <span>Atención directa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-preview">
+          <div class="card-mockup main">
+            <div class="mockup-image">🎂</div>
+            <h3>Tarjetas únicas</h3>
+            <p>Personaliza nombres, frases, fechas, colores y temática del evento.</p>
+          </div>
+
+          <div class="card-mockup second">
+            <div class="mockup-image alt">💌</div>
+            <h3>Listas para compartir</h3>
+            <p>Descarga tu tarjeta o solicítala personalizada por WhatsApp.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Servicios</span>
+          <h2>Tarjetas para cada celebración</h2>
+          <p>
+            Diseñamos tarjetas digitales para momentos familiares, religiosos,
+            sociales y académicos.
+          </p>
+        </div>
+
+        <div class="services-grid" id="servicesContainer"></div>
+
+      </div>
+    </section>
+
+    <!-- DISEÑOS -->
+    <section class="gallery" id="disenos">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Galería</span>
+          <h2>Modelos que puedes personalizar</h2>
+          <p>
+            Puedes usar estos modelos como referencia. Haz clic sobre una imagen
+            para verla en tamaño completo.
+          </p>
+        </div>
+
+        <div class="gallery-grid" id="galleryContainer"></div>
+
+      </div>
+    </section>
+
+    <!-- CREADOR AUTOMÁTICO -->
+    <section class="card-creator" id="crear-tarjeta">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Creador gratuito</span>
+          <h2>Crea tu tarjeta digital en segundos</h2>
+          <p>
+            Completa los datos, mira la vista previa y descarga tu tarjeta lista para compartir.
+            Si deseas un diseño más elaborado, también puedes pedirlo por WhatsApp.
+          </p>
+        </div>
+
+        <div class="creator-grid">
+
+          <div class="creator-form">
+            <h3>Personaliza tu tarjeta</h3>
+
+       
+
+            <div class="form-group">
+              <label for="cardName">Nombre principal</label>
+              <input 
+                type="text" 
+                id="cardName" 
+                placeholder="Ejemplo: Valentina"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="cardDate">Fecha o dato especial</label>
+              <input 
+                type="text" 
+                id="cardDate" 
+                placeholder="Ejemplo: Sábado 20 de julio"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="cardMessage">Frase o dedicatoria</label>
+              <textarea 
+                id="cardMessage" 
+                rows="4" 
+                placeholder="Ejemplo: Que este día esté lleno de amor, alegría y momentos inolvidables."
+              ></textarea>
+                <button class="btn btn-soft btn-inline-action" id="generatePhrase" type="button">
+              Generar frase automática
+            </button>
+            </div>
+
+            <div class="form-group">
+              <label for="cardStyle">Estilo visual</label>
+              <select id="cardStyle">
+                <option value="romantico">Romántico</option>
+                <option value="elegante">Elegante</option>
+                <option value="infantil">Infantil</option>
+                <option value="religioso">Religioso</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cardFormat">Formato</label>
+              <select id="cardFormat">
+                <option value="vertical">Vertical</option>
+                <option value="cuadrado">Cuadrado</option>
+                <option value="historia">Historia / Estado</option>
+              </select>
+            </div>
+
+            <div class="form-group invitation-check">
+              <label>
+                <input type="checkbox" id="isInvitation">
+                Usar como invitación
+              </label>
+            </div>
+
+            <div class="invitation-fields" id="invitationFields">
+              <div class="form-group">
+                <label for="cardHour">Hora</label>
+                <input 
+                  type="text" 
+                  id="cardHour" 
+                  placeholder="Ejemplo: 6:00 p. m."
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="cardPlace">Lugar</label>
+                <input 
+                  type="text" 
+                  id="cardPlace" 
+                  placeholder="Ejemplo: Salón Los Ángeles"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="cardAddress">Dirección</label>
+                <input 
+                  type="text" 
+                  id="cardAddress" 
+                  placeholder="Ejemplo: Av. Principal 123"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="cardConfirm">Confirmación</label>
+                <input 
+                  type="text" 
+                  id="cardConfirm" 
+                  placeholder="Ejemplo: Confirmar asistencia al WhatsApp"
+                >
+              </div>
+            </div>
+
+            
+      <div class="creator-actions compact-actions">
+      <button class="btn btn-outline" id="changeTemplate" type="button">
+      Cambiar plantilla
+      </button>
+
+      <button class="btn btn-primary" id="downloadCard" type="button">
+      Descargar tarjeta
+      </button>
+
+      <button class="btn btn-outline" id="shareCard" type="button">
+      Compartir enlace por WhatsApp
+      </button>
+
+      <button class="btn btn-outline" id="customCard" type="button">
+      Pedir diseño personalizado
+      </button>
+      </div>
+
+            <p class="premium-note">
+              ¿Quieres una tarjeta con foto, animación o sin marca de agua?
+              Solicita una versión personalizada por WhatsApp.
+            </p>
+          </div>
+
+          <div class="creator-preview">
+            <h3>Vista previa</h3>
+
+            <div class="generated-card style-romantico format-vertical" id="generatedCard">
+              <!-- El contenido se genera con JavaScript -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PERSONALIZACIÓN -->
+    <section id="personaliza">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Personalización</span>
+          <h2>Tu tarjeta, a tu estilo</h2>
+          <p>
+            Adaptamos cada diseño para que refleje la emoción del momento y los detalles
+            que deseas compartir.
+          </p>
+        </div>
+
+        <div class="custom-grid">
+
+          <article class="custom-card">
+            <div class="custom-icon">✍️</div>
+            <h3>Datos personalizados</h3>
+            <p>
+              Incluimos nombre, edad, fecha, hora, lugar, frase especial o dedicatoria.
+            </p>
+          </article>
+
+          <article class="custom-card">
+            <div class="custom-icon">🖼️</div>
+            <h3>Fotos y colores</h3>
+            <p>
+              Podemos agregar fotos personales y una paleta de colores según el evento.
+            </p>
+          </article>
+
+          <article class="custom-card">
+            <div class="custom-icon">🎨</div>
+            <h3>Temática especial</h3>
+            <p>
+              Diseños tiernos, elegantes, religiosos, infantiles, modernos o personalizados.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DATOS PARA EL PEDIDO -->
+    <section class="order-data" id="datos-pedido">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Datos para tu pedido</span>
+          <h2>¿Qué debes enviar por WhatsApp?</h2>
+          <p>
+            Para crear tu tarjeta personalizada, envíanos la información principal
+            del evento. Así podremos diseñarla más rápido y con todos los detalles correctos.
+          </p>
+        </div>
+
+        <div class="order-data-box">
+
+          <div class="order-data-content">
+            <h3>Información necesaria</h3>
+
+            <div class="order-list">
+              <div class="order-item">
+                <span>🎉</span>
+                <p><strong>Tipo de evento:</strong> bautizo, misa, cumpleaños, matrimonio, graduación u otro.</p>
+              </div>
+
+              <div class="order-item">
+                <span>👤</span>
+                <p><strong>Nombre:</strong> nombre de la persona, pareja o familia que irá en la tarjeta.</p>
+              </div>
+
+              <div class="order-item">
+                <span>📅</span>
+                <p><strong>Fecha y hora:</strong> día, mes, año y horario del evento si es una invitación.</p>
+              </div>
+
+              <div class="order-item">
+                <span>📍</span>
+                <p><strong>Lugar:</strong> dirección, local, iglesia, salón o punto de referencia.</p>
+              </div>
+
+              <div class="order-item">
+                <span>💬</span>
+                <p><strong>Frase especial:</strong> dedicatoria, mensaje corto o texto que deseas incluir.</p>
+              </div>
+
+              <div class="order-item">
+                <span>🖼️</span>
+                <p><strong>Foto:</strong> imagen personal si deseas que la tarjeta la incluya.</p>
+              </div>
+
+              <div class="order-item">
+                <span>🎨</span>
+                <p><strong>Colores o temática:</strong> estilo elegante, tierno, religioso, infantil o moderno.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-data-card">
+            <div class="order-card-icon">💌</div>
+            <h3>Tip importante</h3>
+            <p>
+              Si no tienes una idea definida, no te preocupes. Puedes enviarnos el tipo de evento
+              y nosotros te ayudamos a elegir colores, estilo y diseño.
+            </p>
+
+            <button
+              class="btn btn-primary"
+              onclick="abrirWhatsApp('Hola, quiero hacer una tarjeta personalizada. Te envío los datos de mi evento.')"
+            >
+              Enviar datos por WhatsApp
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section id="precios">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Precios</span>
+          <h2>Elige el plan ideal para tu tarjeta</h2>
+          <p>
+            Tenemos opciones para saludos sencillos, invitaciones digitales y diseños más elaborados.
+            El precio puede variar según la cantidad de datos, fotos y nivel de personalización.
+          </p>
+        </div>
+
+        <div class="price-grid" id="pricesContainer"></div>
+
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq" id="faq">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Preguntas frecuentes</span>
+          <h2>Resolvemos tus dudas antes de hacer tu pedido</h2>
+          <p>
+            Aquí encontrarás información rápida sobre tiempos de entrega, cambios,
+            formatos y personalización de las tarjetas.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+
+          <article class="faq-item">
+            <h3>¿En qué formato entregan la tarjeta?</h3>
+            <p>
+              La tarjeta se entrega en formato digital, lista para compartir por WhatsApp,
+              Facebook, Instagram u otras redes sociales.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>¿Puedo enviar una foto para incluirla?</h3>
+            <p>
+              Sí. Puedes enviar una foto personal y la agregamos al diseño según el plan elegido.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>¿Puedo elegir los colores?</h3>
+            <p>
+              Sí. Puedes indicar los colores que deseas o podemos sugerirte una combinación
+              según el tipo de evento.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>¿Cuánto demora la entrega?</h3>
+            <p>
+              El tiempo puede variar según el diseño solicitado. Los pedidos sencillos pueden
+              entregarse más rápido, mientras que los diseños más elaborados requieren mayor revisión.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>¿Se pueden hacer cambios?</h3>
+            <p>
+              Sí. Se pueden realizar ajustes razonables de texto, color o detalles antes de la entrega final.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>¿Hacen tarjetas para cualquier evento?</h3>
+            <p>
+              Sí. Trabajamos tarjetas para bautizo, misa, revelación de género, baby shower,
+              cumpleaños, quinceañero, matrimonio, graduaciones y otros eventos especiales.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+    
+    <!-- PEDIDO -->
+    <section id="pedido">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Pedido</span>
+          <h2>¿Cómo hacer tu pedido?</h2>
+          <p>El proceso es sencillo, rápido y directo por WhatsApp.</p>
+        </div>
+
+        <div class="steps-grid">
+
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3>Elige una opción</h3>
+            <p>
+              Puedes crear una tarjeta gratis en la web o pedir un diseño personalizado por WhatsApp.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3>Completa tus datos</h3>
+            <p>
+              Escribe nombre, fecha, frase, fotos, colores y demás detalles del evento.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3>Genera o solicita tu diseño</h3>
+            <p>
+              Descarga tu tarjeta automática o pide una versión más elaborada y personalizada.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">4</div>
+            <h3>Comparte tu tarjeta</h3>
+            <p>
+              Envía tu tarjeta digital por WhatsApp, Facebook, Instagram u otras redes sociales.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="cta" id="contacto">
+      <div class="container">
+
+        <div class="cta-box">
+          <h2>Hagamos una tarjeta que emocione</h2>
+
+          <p>
+            Crea una tarjeta gratis en segundos o cuéntanos qué celebración tienes en mente
+            para diseñarte una versión personalizada.
+          </p>
+
+          <div class="hero-actions cta-actions">
+            <a class="btn btn-light" href="#crear-tarjeta">
+              Crear tarjeta gratis
+            </a>
+
+            <button
+              class="btn btn-light"
+              onclick="abrirWhatsApp('Hola, quiero cotizar una tarjeta personalizada para un evento.')"
+            >
+              Escribir por WhatsApp
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Detalles que emocionan. Tarjetas digitales personalizadas.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <button
+    class="floating-whatsapp"
+    onclick="abrirWhatsApp()"
+    aria-label="Contactar por WhatsApp"
+  >
+    ☘
+  </button>
+
+  <!-- MODAL PARA VER IMÁGENES EN TAMAÑO COMPLETO -->
+  <div class="image-modal" id="imageModal">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar imagen">
+      ×
+    </button>
+
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Imagen ampliada">
+    </div>
+  </div>
+
+  <!-- LIBRERÍA PARA DESCARGAR LA TARJETA COMO IMAGEN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <!-- JAVASCRIPT PRINCIPAL -->
+  <script src="js/main.js"></script>
+</body>
+</html>
