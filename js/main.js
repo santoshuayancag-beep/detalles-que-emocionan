@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '51999999999';
+const WHATSAPP_NUMBER = '51992019383';
 
 const DEFAULT_MESSAGE =
   'Hola, vi la página de Detalles que emocionan y deseo información sobre una tarjeta personalizada.';
